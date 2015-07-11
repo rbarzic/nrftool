@@ -19,7 +19,7 @@ Usage
 
 To flash new firmware:
 
-	$ nrftool [--verbose] --device=nrf51|nrf52 flash FIRMWARE ADDRESS 
+	$ nrftool [--verbose] --device=nrf51|NRF51|nrf52|NRF52  flash FIRMWARE ADDRESS 
 
 To erase current firmware:
 
@@ -27,4 +27,4 @@ To erase current firmware:
 
 If `JLinkExe` can't be found in your `PATH`, it can be specified using `--jlinkexe` option:
 
-	$ nrftool --device=nrf51|nrf52 --jlinkexe path/to/your/JLinkExe erase
+	$ nrftool --device=nrf51|NRF51|nrf52|NRF52 --jlinkexe path/to/your/JLinkExe erase

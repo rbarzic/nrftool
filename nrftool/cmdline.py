@@ -78,9 +78,8 @@ def build_parser():
 	return parser
 
 def build_command(args):
-	if args.command == "flash":
-                print "Device " + args.device
-		return Flash(args.firmware, args.address, args.device ,verbose=args.verbose,jlinkexe=args.jlinkexe)
+	if args.command == "flash":                
+		return Flash(args.firmware, args.address, args.device.lower() ,verbose=args.verbose,jlinkexe=args.jlinkexe)
 	elif args.command == "erase":
 		return Erase(device=args.device,verbose=args.verbose, jlinkexe=args.jlinkexe)
 
