@@ -1,7 +1,7 @@
 nrftool
 =======
 
-A tool to flash and erase nRF devices
+A tool to flash and erase nRF51 & nRF52  devices
 
 Dependencies
 ------------
@@ -12,19 +12,19 @@ Dependencies
 Supported devices
 -----------------
 
-Currently, only the nRF51822 chip is supported.
+Currently, only the nRF51822 and nRF52832 chips are supported.
 
 Usage
 -----
 
 To flash new firmware:
 
-	$ nrftool flash FIRMWARE ADDRESS [--verbose]
+	$ nrftool [--verbose] --device=nrf51|nrf52 flash FIRMWARE ADDRESS 
 
 To erase current firmware:
 
-	$ nrftool erase [--verbose]
+	$ nrftool [--verbose] erase 
 
 If `JLinkExe` can't be found in your `PATH`, it can be specified using `--jlinkexe` option:
 
-	$ nrftool --jlinkexe path/to/your/JLinkExe erase
+	$ nrftool --device=nrf51|nrf52 --jlinkexe path/to/your/JLinkExe erase
