@@ -7,6 +7,7 @@ Check LICENSE for details.
 """
 
 class Command(object):
-	def __init__(self, verbose=False, jlinkexe='JLinkExe', **kwargs):
+	def __init__(self, device='nrf51',verbose=False, jlinkexe='JLinkExe', **kwargs):
 		self.verbose = verbose
 		self.jlinkexe = jlinkexe
+		self.device = device

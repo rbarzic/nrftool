@@ -52,6 +52,11 @@ def build_parser():
 		help="path to JLinkExe"
 	)
 
+        parser.add_argument("--device",
+		action="store",
+		            help="target device (currently nrf51 or nrf52)"
+	)
+
 	subparsers = parser.add_subparsers()
 
 	flash_cmd = subparsers.add_parser("flash",
@@ -74,10 +79,10 @@ def build_parser():
 
 def build_command(args):
 	if args.command == "flash":
-		return Flash(args.firmware, args.address, verbose=args.verbose,
-					 jlinkexe=args.jlinkexe)
+                print "Device " + args.device
+		return Flash(args.firmware, args.address, args.device ,verbose=args.verbose,jlinkexe=args.jlinkexe)
 	elif args.command == "erase":
-		return Erase(verbose=args.verbose, jlinkexe=args.jlinkexe)
+		return Erase(device=args.device,verbose=args.verbose, jlinkexe=args.jlinkexe)
 
 def main():
 	parser = build_parser()
