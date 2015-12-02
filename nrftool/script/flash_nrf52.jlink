@@ -1,5 +1,6 @@
-device nrf52
+si 1
 speed 1000
+device nrf52
 w4 4001e504 1
 loadbin {firmware} {address}
 sleep 100
