@@ -1,3 +1,5 @@
+si 1
+speed 1000
 device nrf51822
 w4 4001e504 2
 w4 4001e50c 1
